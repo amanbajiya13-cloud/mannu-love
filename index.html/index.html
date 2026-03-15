@@ -88,7 +88,7 @@ opacity:0;
 
 <body>
 
-<audio autoplay loop>
+<audio id="song" loop>
 <source src="terehawale.mp3" type="audio/mp3">
 </audio>
 
@@ -138,7 +138,7 @@ noBtn.style.top=y+"px";
 });
 
 document.getElementById("yes").onclick=function(){
-
+document.getElementById("song").play();
 document.getElementById("questionPage").style.display="none";
 document.getElementById("lovePage").style.display="flex";
 
