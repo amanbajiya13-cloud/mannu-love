@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Mannu ❤️</title>
+
+<style>
+body{
+margin:0;
+padding:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Arial;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+overflow:hidden;
+text-align:center;
+color:white;
+}
+
+.container{
+max-width:700px;
+}
+
+h1{
+font-size:35px;
+}
+
+p{
+font-size:20px;
+margin-bottom:40px;
+}
+
+button{
+padding:15px 35px;
+font-size:18px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+margin:10px;
+transition:0.3s;
+}
+
+#yes{
+background:#ff4d6d;
+color:white;
+}
+
+#no{
+background:white;
+color:#ff4d6d;
+position:absolute;
+}
+
+#lovePage{
+display:none;
+flex-direction:column;
+align-items:center;
+}
+
+img{
+width:300px;
+border-radius:20px;
+margin-top:20px;
+box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+.heart{
+position:absolute;
+color:red;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-10vh);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="terehawale.mp3" type="audio/mp3">
+</audio>
+
+<div class="container" id="questionPage">
+
+<h1>Mannu, will you be mine forever? ❤️</h1>
+
+<p>
+Mannu, my baby, my cutieee,<br><br>
+
+sorryyy for not being with you last night.<br>
+I know you needed me.<br>
+
+Foolish I am that I didn't hear that phone ring.<br><br>
+
+maaf kardo mujheee 🥺<br>
+pilizzzzzzz :)
+</p>
+
+<button id="yes">Yes ❤️</button>
+<button id="no">No</button>
+
+</div>
+
+<div id="lovePage">
+
+<h1>I LOVE YOU MANNNUUU ❤️</h1>
+
+<p>Forever yours,<br>Aman</p>
+
+<img src="photo.jpg">
+
+</div>
+
+<script>
+
+let noBtn=document.getElementById("no");
+
+noBtn.addEventListener("mouseover",function(){
+
+let x=Math.random()*window.innerWidth-100;
+let y=Math.random()*window.innerHeight-50;
+
+noBtn.style.left=x+"px";
+noBtn.style.top=y+"px";
+
+});
+
+document.getElementById("yes").onclick=function(){
+
+document.getElementById("questionPage").style.display="none";
+document.getElementById("lovePage").style.display="flex";
+
+startHearts();
+
+}
+
+function startHearts(){
+
+setInterval(function(){
+
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(20+Math.random()*30)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+},300);
+
+}
+
+</script>
+
+</body>
+</html>
